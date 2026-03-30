@@ -1,0 +1,16 @@
+# Python cache files
+__pycache__
+**/*.pyc
+
+# UI dependencies
+node_modules
+
+# UI build output
+ui/demo/build/
+
+# UI package manager debug output
+ui/*.log
+.skiff/webapp.yaml
+
+# Dev tools
+**/.DS_Store

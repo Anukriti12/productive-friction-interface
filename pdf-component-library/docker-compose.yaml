@@ -1,0 +1,25 @@
+version: '3'
+services:
+    sonar:
+        build: ./sonar
+        depends_on:
+            - ui
+            - proxy
+    ui:
+        build: ./ui
+        volumes:
+            - ./ui:/usr/local/src/skiff/app/ui
+            - 'ui_demo_node_modules:/usr/local/src/skiff/app/ui/demo/node_modules'
+            - 'ui_library_node_modules:/usr/local/src/skiff/app/ui/library/node_modules'
+        environment:
+            - NODE_ENV=development
+    proxy:
+        build: ./proxy
+        ports:
+            - 8080:8080
+        depends_on:
+            - ui
+volumes:
+    ui_demo_node_modules:
+    ui_library_node_modules:
+    
