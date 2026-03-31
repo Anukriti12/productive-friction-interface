@@ -8,6 +8,8 @@ cd productive-friction-reader
 npm start
 
 
+In other shell:
+
 conda activate papermage
 
 python server.py
